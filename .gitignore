@@ -1,0 +1,39 @@
+# Dependency directories
+node_modules/
+.npm/
+.pnpm/
+.yarn/
+dist/
+build/
+out/
+.next/
+coverage/
+
+# dotenv environment variables
+.env
+.env.*
+!.env.example
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE/editor files
+.vscode/
+.idea/
+*.swp
+
+# TypeScript build info
+*.tsbuildinfo
+
+# Misc
+*.local
+*.cache
