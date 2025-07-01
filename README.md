@@ -38,7 +38,10 @@
    NODE_ENV=development
    FRONTEND_URL=http://localhost:3000
 3. Run frontend -> from fraud-explorer
-4. npm install , npm run dev
+4.  NEXT_PUBLIC_BACKEND_URL=https://fraud-backend-7vvy.onrender.com
+NEXT_PUBLIC_WS_URL=https://fraud-backend-7vvy.onrender.com/ws
+NEXT_PUBLIC_API_URL=/api
+5. npm install , npm run dev
 
 
 
