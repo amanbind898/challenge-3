@@ -25,42 +25,20 @@
 ## 🛠️ Tech Stack
 ![image](https://github.com/user-attachments/assets/e9b73b85-738c-4294-9c65-8b33703c39f4)
 
-📦 Project Structure
-text
-fraud-detection-system/
-├── backend/
-│   ├── src/
-│   ├── package.json
-│   └── .env.example
-├── frontend/
-│   ├── app/
-│   ├── package.json
-│   └── next.config.js
-└── README.md
-⚡ Quick Start
-1. Clone the Repo
-bash
-git clone https://github.com/YOUR_USERNAME/fraud-detection-system.git
-cd fraud-detection-system
-2. Setup MongoDB
-Create a free MongoDB Atlas cluster
+## 📦 Project Structure
+- backend
+- frontend/fraud-explorer
 
-Add a database user and whitelist your IP
+## ⚡ Quick Start
+   clone this repo.
+1. run backend -> npm install , npm run build , npm run dev
+2. env file setup
+    MONGODB_URI=xxxxxxxxxxxxx 
+   PORT=8080
+   NODE_ENV=development
+   FRONTEND_URL=http://localhost:3000
+3. Run frontend -> from fraud-explorer
+4. npm install , npm run dev
 
-Copy your connection string
 
-3. Backend Setup
-bash
-cd backend
-cp .env.example .env
-# Edit .env with your MongoDB URI and DB name
 
-npm install
-npm run dev
-# Or for ESM: node --loader ts-node/esm src/index.ts
-4. Frontend Setup
-bash
-cd ../frontend
-npm install
-npm run dev
-# Visit http://localhost:3000
