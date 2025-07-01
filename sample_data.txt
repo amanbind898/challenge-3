@@ -1,0 +1,47 @@
+sample rules
+
+ rules = [
+  {
+    id: 'RISK_HIGH_AMOUNT',
+    name: 'High Amount Transaction',
+    conditions: {
+      all: [
+        {
+          fact: 'amount',
+          operator: 'greaterThan',
+          value: 5000
+        }
+      ]
+    },
+    event: {
+      type: 'flag_fraud',
+      params: {
+        message: 'Amount exceeds ₹5000',
+        severity: 'medium'
+      }
+    },
+    enabled: true
+  },
+  {
+    id: 'MULTIPLE_CITIES',
+    name: 'User Changes City Rapidly',
+    conditions: {
+      all: [
+        {
+          fact: 'location.city',
+          operator: 'notEqual',
+          value: 'lastKnownCity'
+        }
+      ]
+    },
+    event: {
+      type: 'flag_fraud',
+      params: {
+        message: 'City mismatch detected',
+        severity: 'high'
+      }
+    },
+    enabled: true
+  }
+];
+
