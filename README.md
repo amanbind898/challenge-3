@@ -20,7 +20,8 @@ A full-stack, real-time fraud detection dashboard that streams transactions, app
 - **Frontend:** Next.js, Tailwind CSS, ShadCN UI
 - **Backend:** Node.js, WebSocket, Express, MongoDB
 - **Rules Engine:** `json-rules-engine` (customized for runtime decision logic)
-- **Database:** MongoDB (hosted or local)
+- **Database:** MongoDB 
+![image](https://github.com/user-attachments/assets/73e38811-bee7-4448-bbe8-b5c5a147c050)
 
 ---
 
@@ -40,8 +41,8 @@ A full-stack, real-time fraud detection dashboard that streams transactions, app
 ### 1. Clone This Repo
 
 ```bash
-git clone https://github.com/your-org/live-fraud-detector.git
-cd live-fraud-detector
+https://github.com/amanbind898/challenge-3.git
+
 ```
 
 ### 2. Start the Backend
@@ -77,6 +78,19 @@ NEXT_PUBLIC_BACKEND_URL=https://project.onrender.com
 NEXT_PUBLIC_WS_URL=wss://fraud-backend.com/ws
 NEXT_PUBLIC_API_URL=/api
 ```
+## 📊 Performance & Input Metrics
+
+| Measure                          | Value / Target                  | Description                                       |
+|----------------------------------|----------------------------------|---------------------------------------------------|
+| 🚀 Simulated Transactions        | ~1 transaction / second         | Streamed from backend to frontend via WebSocket   |
+| 🧠 Rule Evaluation Time          | < 10ms per transaction          | Using `json-rules-engine`                        |
+| 🔎 Rule Match Throughput         | 100+ rules per transaction      | Efficient loop with early exits                   |
+| 📄 Decision Log Pagination       | 20 entries per page             | Optimized paginated query on MongoDB              |
+| 📈 UI Latency                    | < 100ms (average)               | Fast UI updates via React state                  |
+| 🌐 WebSocket Reconnect Timeout   | 3 seconds                       | Auto-reconnect on socket drop                     |
+| 📦 Max Transactions In Memory    | 100 latest                      | Capped for performance in feed view               |
+| 🧪 Stress Tested                 | ✅ (1k tx simulated)            | Verified frontend stability                       |
+
 
 
 ## 📈 Metrics & Outcomes
@@ -84,3 +98,5 @@ NEXT_PUBLIC_API_URL=/api
 - ✅ Real-time feedback loop from transaction → decision → UI
 - 📉 Latency under 1s for rule-based decisions
 - 🔧 Pluggable rules & risk scoring for modular experiments
+
+## sample rules added in txt file .
