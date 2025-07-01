@@ -11,7 +11,7 @@ import { Badge } from '@/components/ui/badge'
 interface Rule {
   message: string
   severity: 'low' | 'medium' | 'high'
-  ruleId?: string // optional in case backend includes it
+  ruleId?: string 
 }
 
 interface LogEntry {
