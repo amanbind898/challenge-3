@@ -14,8 +14,8 @@ const nextConfig = {
     ]
   },
   env: {
-    NEXT_PUBLIC_WS_URL: process.env.NEXT_PUBLIC_WS_URL || 'https://fraud-backend-7vvy.onrender.com/ws',
-    NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_API_URL || '/api',
+    NEXT_PUBLIC_WS_URL: 'https://fraud-backend-7vvy.onrender.com/ws',
+    NEXT_PUBLIC_API_URL:  '/api',
     NEXT_PUBLIC_BACKEND_URL: 'https://fraud-backend-7vvy.onrender.com'
   },
 }
