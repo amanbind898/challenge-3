@@ -136,10 +136,10 @@ class RuleEngineService {
         timestamp: new Date(),
         facts,
         matchedRules: events.map(event => ({
-          ruleId: event.params.rule_id,
+          ruleId: event.params?.rule_id ?? '',
           type: event.type,
-          message: event.params.message,
-          severity: event.params.severity
+          message: event.params?.message ?? '',
+          severity: event.params?.severity ?? 'low'
         })),
         isFraudulent: events.length > 0,
         riskScore: this.calculateRiskScore(events)
@@ -157,7 +157,7 @@ class RuleEngineService {
         matchedRules: [],
         isFraudulent: false,
         riskScore: 0,
-        error: error.message
+        error: error instanceof Error ? error.message : String(error)
       };
     }
   }

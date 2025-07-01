@@ -3,7 +3,7 @@ import { v4 as uuidv4 } from 'uuid'
 
 export class TransactionSimulator {
   private isRunning = false
-  private interval: NodeJS.Timeout | null = null
+private interval: ReturnType<typeof setTimeout> | null = null;
   private generatedIds = new Set<string>()
 
   private merchants = [
