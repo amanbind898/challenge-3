@@ -63,7 +63,7 @@ export function TransactionFeed() {
   }, [])
 
   const connectWebSocket = () => {
-    const wsUrl = process.env.NEXT_PUBLIC_WS_URL || 'ws://localhost:8080/ws'
+    const wsUrl = 'https://fraud-backend-7vvy.onrender.com/ws'
     wsRef.current = new WebSocket(wsUrl)
 
     wsRef.current.onopen = () => {
