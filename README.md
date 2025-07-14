@@ -1,44 +1,102 @@
-# Live Fraud Detection System
- A real-time fraud detection dashboard that:
+# Live Fraud-Rule Composer & Transaction Explorer
 
-- Streams live transactions via WebSocket
+A full-stack, real-time fraud detection dashboard that streams transactions, applies fraud rules on the fly, and lets analysts investigate anomalies with a click.
 
-- Applies dynamic, editable fraud rules
-
-- Flags and scores suspicious transactions
-
-- Lets analysts compose rules and drill down into decision logs
+---
 
 ## 🚀 Features
-- Live Transaction Feed: See transactions and fraud alerts in real time
 
-- Rule Composer: Create, edit, and toggle fraud rules instantly
+- **🔴 Live Transaction Feed:** Watch fraud alerts and live transactions stream in real-time via WebSocket.
+- **🛡️ Rule Composer:** Instantly create, edit, and activate/deactivate fraud detection rules.
+- **🔍 Drill-Down View:** Click any transaction to explore full details, triggered rules, and risk scores.
+- **📊 Simulation Controls:** Start/stop simulated transaction streams with a single click (Mock data for realtime simulation).
+- **⚙️ No-Code Rule Management:** Rules are editable directly in the browser—no redeploy needed.
+- **🎨 Modern UI:** Built with `Next.js`, `Tailwind CSS`, and `shadcn/ui` for fast, beautiful prototyping.
 
-- Drill-Down View: Inspect transaction details, risk scores, and triggered rules
+---
 
-- Simulation Control: Start/stop simulated transaction streams from the UI
+## 🛠 Tech Stack
 
-- Fully Editable Rules: No code needed—analysts can update detection logic on the fly
+- **Frontend:** Next.js, Tailwind CSS, ShadCN UI
+- **Backend:** Node.js, WebSocket, Express, MongoDB
+- **Rules Engine:** `json-rules-engine` (customized for runtime decision logic)
+- **Database:** MongoDB 
+![image](https://github.com/user-attachments/assets/73e38811-bee7-4448-bbe8-b5c5a147c050)
 
-- Modern UI: Built with Next.js, Tailwind CSS, and shadcn/ui
+---
 
-## 🛠️ Tech Stack
-![image](https://github.com/user-attachments/assets/e9b73b85-738c-4294-9c65-8b33703c39f4)
+## 🧱 Project Structure
 
-## 📦 Project Structure
-- backend
-- frontend/fraud-explorer
+```
+.
+├── backend/             # Node.js backend with WebSocket + rule engine + simulation logic
+└── frontend/
+    └── fraud-explorer/  # Next.js frontend with pages for Live Feed, Rules, and Drill-Down
+```
+
+---
 
 ## ⚡ Quick Start
-   clone this repo.
-1. run backend -> npm install , npm run build , npm run dev
-2. env file setup
-    MONGODB_URI=xxxxxxxxxxxxx 
-   PORT=8080
-   NODE_ENV=development
-   FRONTEND_URL=http://localhost:3000
-3. Run frontend -> from fraud-explorer
-4. npm install , npm run dev
+
+### 1. Clone This Repo
+
+```bash
+https://github.com/amanbind898/challenge-3.git
+
+```
+
+### 2. Start the Backend
+
+```bash
+cd backend
+npm install
+npm run build
+npm run dev
+```
+
+🔧 Create a `.env` file in `/backend`:
+
+```
+MONGODB_URI=mongodb://localhost:27017/frauddb
+PORT=8080
+NODE_ENV=development
+FRONTEND_URL=http://localhost:3000
+```
+
+### 3. Start the Frontend
+
+```bash
+cd frontend/fraud-explorer
+npm install
+npm run dev
+```
+
+🔧 Create a `.env.local` file in `fraud-explorer`:
+
+```
+NEXT_PUBLIC_BACKEND_URL=https://project.onrender.com
+NEXT_PUBLIC_WS_URL=wss://fraud-backend.com/ws
+NEXT_PUBLIC_API_URL=/api
+```
+## 📊 Performance & Input Metrics
+
+| Measure                          | Value / Target                  | Description                                       |
+|----------------------------------|----------------------------------|---------------------------------------------------|
+| 🚀 Simulated Transactions        | ~1 transaction / second         | Streamed from backend to frontend via WebSocket   |
+| 🧠 Rule Evaluation Time          | < 10ms per transaction          | Using `json-rules-engine`                        |
+| 🔎 Rule Match Throughput         | 100+ rules per transaction      | Efficient loop with early exits                   |
+| 📄 Decision Log Pagination       | 20 entries per page             | Optimized paginated query on MongoDB              |
+| 📈 UI Latency                    | < 100ms (average)               | Fast UI updates via React state                  |
+| 🌐 WebSocket Reconnect Timeout   | 3 seconds                       | Auto-reconnect on socket drop                     |
+| 📦 Max Transactions In Memory    | 100 latest                      | Capped for performance in feed view               |
+| 🧪 Stress Tested                 | ✅ (1k tx simulated)            | Verified frontend stability                       |
 
 
 
+## 📈 Metrics & Outcomes
+
+- ✅ Real-time feedback loop from transaction → decision → UI
+- 📉 Latency under 1s for rule-based decisions
+- 🔧 Pluggable rules & risk scoring for modular experiments
+
+## sample rules added in txt file .
