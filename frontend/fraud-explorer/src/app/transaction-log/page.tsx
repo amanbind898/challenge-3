@@ -38,7 +38,7 @@ export default function DrillDownPage() {
     try {
       setLoading(true)
       setError(null)
-     // Use environment variable for API base URL
+     
       const baseUrl = process.env.NEXT_PUBLIC_API_URL || '/api';
       const res = await axios.get<{ entries: LogEntry[]; hasMore: boolean }>(
         `${baseUrl}/decision-logs?page=${pageToLoad}&tx=${filterTx}`
